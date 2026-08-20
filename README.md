@@ -1,4 +1,6 @@
- # 🧬 Automated Academic & Research Opportunity Scraper
+# 🧬 Automated Academic & Research Opportunity Scraper
+
+A lightweight Python automation engine that monitors Hellenic research institutes and university portals for biological, marine science, and bioinformatics opportunities, delivering real-time mobile alerts via the ntfy protocol.
 
 ---
 
@@ -32,23 +34,40 @@
 
 ---
 
-## 🚀 Setup
+## 🚀 Quick Start for Forked Repositories
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/](https://github.com/)<your-username>/<repo-name>.git
-   cd <repo-name>
+1. **Fork** this repository.
+2. **Customize your search:** Adjust your target portals, keywords, and exclusions in `config.py`.
+3. **Configure Secrets & Permissions:** Follow the setup steps below so GitHub Actions can run safely.
+4. **Subscribe to alerts:** Connect your phone or browser to your custom ntfy topic.
 
-   A lightweight Python automation engine that monitors Hellenic research institutes and university portals for biological, marine science, and bioinformatics opportunities, delivering real-time mobile alerts via the ntfy protocol.
+---
 
-Click the Settings tab at the top of the page .In the left-hand sidebar, scroll down to the Security section and click on Secrets and variables Actions. </p>
-<p>Click the green New repository secret button in the top right.</p>
-<p>In the Name field, type exactly NTFY_TOPIC</p>
-In the Secret field, paste your private topic name.Click the green Add secret button.Verify Workflow Permission (One-time check).
-<p>While you are in Settings:Go to the left sidebar Actions General.Scroll to the bottom to Workflow permissions.Select Read and write permissions.Click Save. </p>
+## 🔐 GitHub Secrets & Permissions Setup
 
+### 1. Add your private `NTFY_TOPIC`
+1. Go to your repository's **Settings** tab.
+2. In the left sidebar, navigate to **Security** $\rightarrow$ **Secrets and variables** $\rightarrow$ **Actions**.
+3. Click the green **New repository secret** button in the top right.
+4. Set the fields:
+   * **Name:** `NTFY_TOPIC`
+   * **Secret:** Your chosen private topic name *(e.g., `my_custom_academic_alerts`)*
+5. Click **Add secret**.
 
-<h1>NTFY</h1>
- Pick a New Topic secret name from web or app. Subscribe
- OR 
- in your browser enter the name after the first part of the link: [https://ntfy.sh/random_name]
+### 2. Enable Workflow Write Permissions (Required)
+1. In the repository **Settings**, go to the left sidebar and select **Actions** $\rightarrow$ **General**.
+2. Scroll to the bottom to the **Workflow permissions** section.
+3. Select **Read and write permissions** *(this allows the bot to update `seen_jobs.txt` automatically)*.
+4. Click **Save**.
+
+---
+
+## 📲 Setting Up ntfy Alerts
+
+ntfy is completely free and requires no account or registration.
+
+* **Mobile App (iOS / Android):**
+  1. Download the **ntfy** app.
+  2. Tap **`+`**, type your chosen topic secret name, and tap **Subscribe**.
+* **Web Browser:**
+  * Open `https://ntfy.sh/<your_topic_name>` in your browser to view alerts directly.
